@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terimakasih</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        body {
+            background: black;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: aqua;
+        }
+
+        h1 {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            text-align: center;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Terimakasih!</h1>
+    <p>
+        Terimakasih telah merayakan momen istimewa bersama kami.
+        Semoga harimu penuh kebahagiaan dan kenangan indah.
+        Kami menghargai kehadiran dan dukunganmu.
+    </p>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <p>Waktu telah habis!</p>
+            <button class="popup-btn" onclick="bukaPage1()">THK</button>
+        </div>
+    </div>
+    <script>
+        function showPopup() {
+            var popup = document.getElementById('popup');
+            popup.style.display = 'flex';
+        }
+        var countdown = 15;
+        var timerDisplay = document.getElementById('timer-display');
+
+        function updateTimer() {
+            timerDisplay.textContent = countdown + ' detik';
+            countdown--;
+
+            if (countdown < 0) {
+                showPopup();
+            } else {
+                setTimeout(updateTimer, 1000);
+            }
+        }
+
+        updateTimer();
+    </script>
+</body>
+</html>
